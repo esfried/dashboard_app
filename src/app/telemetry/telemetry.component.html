@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="header">Telemetry</div>
+  <ng-container *ngIf="(status$ | async) === 'connected' then dataBlock else offlineBlock"></ng-container>
+  <connection-status></connection-status>
+</div>
+
+<ng-template #dataBlock>
+  <ng-container *ngIf="data$ | async as data">
+    <table class="telemetry-table">
+      <thead>
+        <tr>
+          <th>Request</th>
+          <th>Client IDs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let screenNameXClientIds of data.screenNameXClientIds">
+          <td>{{ getEnumText(screenNameXClientIds.request) }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let clientId of screenNameXClientIds.clientIds">{{ clientId }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </ng-container>
+</ng-template>
+
+<ng-template #offlineBlock>
+  <div class="offline">
+    Offline
+  </div>
+</ng-template>
+

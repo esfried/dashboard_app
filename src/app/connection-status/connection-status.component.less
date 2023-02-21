@@ -1,0 +1,56 @@
+.wrapper {
+  border: 1px solid gray;
+  text-align: center;
+
+  > div {
+    padding: 5px;
+  }
+}
+
+.connecting {
+  background-color: yellow;
+  color: black;
+}
+
+.connected {
+  background-color: green;
+  color: white;
+}
+
+.disconnected {
+  background-color: lightcoral;
+  color: black;
+}
+
+.reconnecting {
+  background-color: orange;
+  color: white;
+}
+
+.connecting,
+.reconnecting {
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+        color: inherit;
+    }
+    25% {
+        opacity: 0.5;
+        color: black;
+    }
+    50% {
+        opacity: 0.1;
+        color: inherit;
+    }
+    75% {
+        opacity: 0.5;
+        color: black;
+    }
+    100% {
+        opacity: 1;
+        color: inherit;
+    }
+}

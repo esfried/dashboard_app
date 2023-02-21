@@ -1,0 +1,3 @@
+<div class="wrapper">
+    <div [class]="status$ | async">Status: {{ capitalizeFirstLetter(status$ | async)}}</div>
+</div>

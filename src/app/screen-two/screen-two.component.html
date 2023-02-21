@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="header">Screen Two</div>
+    <ng-container *ngIf="(status$ | async) === 'connected' then dataBlock else offlineBlock"></ng-container>
+    <connection-status></connection-status>
+  </div>
+  
+  <ng-template #dataBlock>
+    <ng-container *ngIf="data$ | async as data">
+      <div class="grid-container">
+        <div class="grid-item title">Name</div>
+        <div class="grid-item content">{{ data?.name }}</div>
+        <div class="grid-item title">Counter</div>
+        <div class="grid-item content">{{ data?.counter }}</div>
+      </div>
+    </ng-container>
+  </ng-template>
+  
+  <ng-template #offlineBlock>
+    <div class="offline">
+      Offline
+    </div>
+  </ng-template>
+  
