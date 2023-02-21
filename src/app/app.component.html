@@ -1,5 +1,8 @@
-<menu></menu>
-<router-outlet></router-outlet>
-
-
-
+<div class="wrapper">
+  <div class="header">
+    {{ signalRService.connectionId }} Screen: {{signalRService.subscribedScreen}}
+    <input type="checkbox" [(ngModel)]="signalRService.isPingEnabled">
+  </div>
+  <menu></menu>
+  <router-outlet></router-outlet>
+</div>

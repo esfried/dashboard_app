@@ -9,6 +9,7 @@ import { ScreenThreeComponent } from './screen-three/screen-three.component';
 import { MenuComponent } from './menu/menu.component';
 import { TelemetryComponent } from './telemetry/telemetry.component';
 import { ConnectionStatusComponent } from './connection-status/connection-status.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConnectionStatusComponent } from './connection-status/connection-status
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

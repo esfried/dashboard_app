@@ -6,6 +6,14 @@
 
 <ng-template #dataBlock>
   <ng-container *ngIf="data$ | async as data">
+    <div class="grid-container">
+      <div class="grid-item title">Name</div>
+      <div class="grid-item content">{{ data?.name }}</div>
+      <div class="grid-item title">Clock</div>
+      <div class="grid-item content">{{ data?.clock }}</div>
+      <div class="grid-item title">Counter</div>
+      <div class="grid-item content">{{ data?.counter }}</div>
+    </div>
     <table class="telemetry-table">
       <thead>
         <tr>
@@ -14,17 +22,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let screenNameXClientIds of data.screenNameXClientIds">
-          <td>{{ getEnumText(screenNameXClientIds.request) }}</td>
+        <tr *ngFor="let item of data?.screens">
+          <td>{{ getEnumText(item.screen) }}</td>
           <td>
             <ul>
-              <li *ngFor="let clientId of screenNameXClientIds.clientIds">{{ clientId }}</li>
+              <li *ngFor="let id of item.clientIds">{{ id }}</li>
             </ul>
           </td>
         </tr>
       </tbody>
     </table>
-    
+
   </ng-container>
 </ng-template>
 
@@ -33,4 +41,3 @@
     Offline
   </div>
 </ng-template>
-

@@ -17,7 +17,7 @@ export abstract class ScreenBaseComponent  {
 
   ngOnInit() {
     this.signalRService.startConnection(this.requestCommand);
-    this.data$ = this.signalRService.on(HubResponse[this.responseCommand]);
+    this.data$ = this.signalRService.on(HubResponse[this.responseCommand])
     this.status$ = this.signalRService.connectionStatusSubject
   }
 

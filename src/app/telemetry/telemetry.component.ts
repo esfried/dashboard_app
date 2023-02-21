@@ -5,7 +5,7 @@ import { SignalRService } from '../services/signal-r.service';
 
 @Component({
   templateUrl: './telemetry.component.html',
-  styleUrls: ['./telemetry.component.less','../shared.less']
+  styleUrls: ['../shared.less','./telemetry.component.less']
 })
 export class TelemetryComponent extends ScreenBaseComponent {
   constructor(signalRService: SignalRService) {
